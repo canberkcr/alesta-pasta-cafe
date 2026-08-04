@@ -36,22 +36,50 @@
     "image": "images/sahanda yumurta.png"
   },
   {
-    "name": "Omlet Çeşitleri",
-    "desc": "Sıcak tavasında kaşarlı, peynirli veya karışık omlet",
-    "price": "175-200",
+    "name": "Omlet - Kaşarlı",
+    "desc": "Sıcak tavasında kaşar peynirli leziz omlet",
+    "price": "175",
     "category": "kahvalti",
     "image": "images/omlet.png"
   },
   {
-    "name": "Menemen Çeşitleri",
-    "desc": "Sade, kaşarlı veya sucuklu kaşarlı sıcak menemen",
-    "price": "175-220",
+    "name": "Omlet - Peynirli",
+    "desc": "Sıcak tavasında beyaz peynirli omlet",
+    "price": "175",
+    "category": "kahvalti",
+    "image": "images/omlet.png"
+  },
+  {
+    "name": "Omlet - Karışık",
+    "desc": "Sucuklu, kaşarlı ve peynirli zengin omlet",
+    "price": "200",
+    "category": "kahvalti",
+    "image": "images/omlet.png"
+  },
+  {
+    "name": "Menemen - Sade",
+    "desc": "Domates, biber ve taze yumurtalı sade menemen",
+    "price": "175",
+    "category": "kahvalti",
+    "image": "images/menemen.png"
+  },
+  {
+    "name": "Menemen - Kaşarlı",
+    "desc": "Erimiş bol kaşar peynirli sıcak menemen",
+    "price": "200",
+    "category": "kahvalti",
+    "image": "images/menemen.png"
+  },
+  {
+    "name": "Menemen - Sucuklu Kaşarlı",
+    "desc": "Kasap sucuk ve kaşar peynirli zengin menemen",
+    "price": "220",
     "category": "kahvalti",
     "image": "images/menemen.png"
   },
   {
     "name": "Kızartma Tabağı (Sosis ve Patates)",
-    "desc": "Çıtır patates kızartması ve sosis tabağı",
+    "desc": "Çıtır patates kızartması ve kızarmış sosis tabağı",
     "price": "200",
     "category": "kahvalti",
     "image": "images/Kızartma Tabağı Sosis ve Patates.png"
@@ -64,10 +92,32 @@
     "image": "images/Patates Kızartması.png"
   },
   {
-    "name": "Tost Çeşitleri",
-    "desc": "Kaşarlı, peynirli, karışık veya kavurmalı kaşarlı tost",
-    "price": "150-240",
+    "name": "Tost - Kaşarlı",
+    "desc": "Taze fırın ekmeğinde erimiş kaşar peynirli tost",
+    "price": "150",
     "category": "tost",
+    "image": "images/tost çeşitleri.png"
+  },
+  {
+    "name": "Tost - Peynirli",
+    "desc": "Beyaz peynirli leziz tost",
+    "price": "175",
+    "category": "tost",
+    "image": "images/tost çeşitleri.png"
+  },
+  {
+    "name": "Tost - Karışık",
+    "desc": "Sucuk ve kaşar peynirli karışık tost",
+    "price": "200",
+    "category": "tost",
+    "image": "images/tost çeşitleri.png"
+  },
+  {
+    "name": "Tost - Kavurmalı Kaşarlı",
+    "desc": "Özel Rize kavurması ve erimiş kaşarlı tost",
+    "price": "240",
+    "category": "tost",
+    "tag": "Doyurucu",
     "image": "images/tost çeşitleri.png"
   },
   {
@@ -75,7 +125,7 @@
     "desc": "Özel Ayvalık ekmeğinde bol malzemeli ve turşulu tost",
     "price": "240",
     "category": "tost",
-    "tag": "Doyurucu",
+    "tag": "Spesiyal Tost",
     "image": "images/ayvalık tost.png"
   },
   {
@@ -171,7 +221,7 @@
     "image": "images/Peynirli Poğaça.png"
   },
   {
-    "name": "Poğaça Çeşitleri (Kıymalı, Zeytinli, Patatesli)",
+    "name": "Poğaça (Kıymalı, Zeytinli, Patatesli)",
     "desc": "Kıymalı, zeytinli veya patatesli fırın poğaçası çeşitleri",
     "price": "25",
     "category": "pogaca",
@@ -185,25 +235,32 @@
     "image": "images/Sade Açma.png"
   },
   {
-    "name": "Açma Çeşitleri (Çikolatalı, Peynirli, Patatesli)",
-    "desc": "Çikolatalı, peynirli, zeytinli veya patatesli zengin açmalar",
+    "name": "Açma - Çikolatalı",
+    "desc": "İçi çikolata dolgulu yumuşak fırın açması",
     "price": "30",
     "category": "pogaca",
     "image": "images/Patatesli Açma.png"
   },
   {
-    "name": "Simit - Klasik",
-    "desc": "Geleneksel bol susamlı fırın simidi",
+    "name": "Açma - Peynirli",
+    "desc": "Peynir dolgulu leziz fırın açması",
+    "price": "30",
+    "category": "pogaca",
+    "image": "images/Patatesli Açma.png"
+  },
+  {
+    "name": "Açma - Zeytinli / Kaşarlı / Patatesli",
+    "desc": "Zeytinli, kaşarlı veya patatesli zengin açmalar",
+    "price": "30",
+    "category": "pogaca",
+    "image": "images/Patatesli Açma.png"
+  },
+  {
+    "name": "Simit - Klasik / Çekirdekli",
+    "desc": "Geleneksel bol susamlı veya ayçekirdekli fırın simidi",
     "price": "25",
     "category": "pogaca",
     "image": "images/Simit.png"
-  },
-  {
-    "name": "Simit - Çekirdekli",
-    "desc": "Bol ayçekirdekli çıtır fırın simidi",
-    "price": "25",
-    "category": "pogaca",
-    "image": "images/Çekirdekli Simit.png"
   },
   {
     "name": "Tereyağlı Simit",
@@ -227,7 +284,7 @@
     "image": "images/Kaşarlı & Sucuklu Simit.png"
   },
   {
-    "name": "Simit Sandviç (Açık Kaşarlı)",
+    "name": "Açık Kaşarlı Simit",
     "desc": "Üzeri eritilmiş bol kaşar peynirli dolu simit sandviç",
     "price": "90",
     "category": "pogaca",
@@ -307,9 +364,16 @@
     "image": "images/İbiza.png"
   },
   {
-    "name": "Ekler Çeşitleri",
-    "desc": "Fransız usulü çikolatalı ve aromalı taze ekler",
-    "price": "175-200",
+    "name": "Ekler - Büyük (Adet)",
+    "desc": "Fransız usulü çikolatalı büyük boy taze ekler",
+    "price": "175",
+    "category": "tatli",
+    "image": "images/Ekler.png"
+  },
+  {
+    "name": "Ekler - Küçük (4 Adet)",
+    "desc": "Çikolatalı ve aromalı porsiyonluk mini ekler (4 adet)",
+    "price": "200",
     "category": "tatli",
     "image": "images/Ekler.png"
   },
@@ -480,140 +544,140 @@
     "name": "Çay",
     "desc": "Taze demlenmiş Rize çayı",
     "price": "30",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Çay.png"
   },
   {
     "name": "Türk Kahvesi",
     "desc": "Köpüklü geleneksel Türk kahvesi",
     "price": "100",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Türk Kahvesi.png"
   },
   {
     "name": "Nescafe (Sade / Sütlü)",
     "desc": "Sıcak sade veya sütlü Nescafe",
     "price": "100",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Nescafe Sade - Sütlü.png"
   },
   {
     "name": "Cappucino",
     "desc": "İpeksi köpüklü sıcak Cappuccino",
     "price": "100",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Cappucino.png"
   },
   {
     "name": "Latte",
     "desc": "Espresso ve sıcak süt köpüklü Latte",
     "price": "100",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Latte.png"
   },
   {
     "name": "Sıcak Çikolata",
     "desc": "Yoğun kıvamlı sıcak çikolata",
     "price": "100",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Sıcak Çikolata.png"
   },
   {
     "name": "Obsesso Soğuk Kahve Çeşitleri",
     "desc": "Obsesso Latte, Mocha, Black soğuk kahve çeşitleri",
     "price": "75",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Obsesso Soğuk Kahve Çeşitleri.png"
   },
   {
     "name": "Kutu Coca Cola",
     "desc": "Buz gibi 330 ml Kutu Coca Cola",
     "price": "60",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Kutu Cola.png"
   },
   {
     "name": "Kutu Fanta",
     "desc": "Buz gibi 330 ml Kutu Fanta",
     "price": "60",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Kutu Fanta.png"
   },
   {
     "name": "Kutu Sprite",
     "desc": "Buz gibi 330 ml Kutu Sprite",
     "price": "60",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Kutu Sprite.png"
   },
   {
     "name": "Kutu Ayran",
     "desc": "Taze ferahlatıcı yayık ayranı",
     "price": "35",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Kutu Ayran.png"
   },
   {
     "name": "Kutu Cappy Çeşitleri",
     "desc": "Şeftali, vişne, karışık Cappy meyve suyu çeşitleri",
     "price": "60",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Kutu Cappy Çeşitleri.png"
   },
   {
     "name": "Kutu Ice Tea Çeşitleri",
     "desc": "Soğuk şeftali veya limon aromalı Ice Tea çeşitleri",
     "price": "60",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Kutu Ice Tea Çeşitleri.png"
   },
   {
     "name": "Cam Şişe Meyve Suyu",
     "desc": "Cam şişede lezzetli taze meyve suyu",
     "price": "65",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Cam Şişe Meyve Suyu.png"
   },
   {
     "name": "Meyve Suyu 200 ml",
     "desc": "Küçük kutu meyve suyu",
     "price": "30",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Meyve Suyu 200 ml.png"
   },
   {
     "name": "Ev Yapımı Limonata",
     "desc": "Taze nane yapraklı ev yapımı soğuk limonata",
     "price": "75",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Ev Yapımı Limonata.png"
   },
   {
     "name": "Uludağ Limonata 330 ml",
     "desc": "Soğuk Uludağ limonata",
     "price": "60",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Uludağ Limonata 330 ml.png"
   },
   {
     "name": "Meyveli Maden Suyu",
     "desc": "Limonlu, elmalı veya çilekli maden suyu",
     "price": "35",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Meyveli Maden Suyu.png"
   },
   {
     "name": "Sade Maden Suyu",
     "desc": "Doğal zengin mineralli sade soda",
     "price": "25",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Sade Maden Suyu.png"
   },
   {
     "name": "Su (500 ml)",
     "desc": "Soğuk doğal kaynak suyu",
     "price": "15",
-    "category": "kuru",
+    "category": "icecek",
     "image": "images/Su.png"
   }
 ]
