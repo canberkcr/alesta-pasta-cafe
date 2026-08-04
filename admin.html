@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alesta Pasta & Cafe | Fiyat Yönetim Paneli</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 pb-20">
+
+    <!-- LOGIN MODAL (Giriş Ekranı) -->
+    <div id="loginModal" class="fixed inset-0 z-50 bg-[#3E2723]/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full border border-gray-100 text-center">
+            <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 002-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-1">Yönetici Girişi</h2>
+            <p class="text-sm text-gray-500 mb-6">Alesta Pasta & Cafe Fiyat Paneli</p>
+            
+            <form onsubmit="handleLogin(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Kullanıcı Adı</label>
+                    <input type="text" id="loginUsername" required placeholder="Kullanıcı adınızı girin" 
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Şifre</label>
+                    <input type="password" id="loginPassword" required placeholder="Şifrenizi girin" 
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                </div>
+                <div id="loginError" class="hidden text-red-600 text-xs font-semibold bg-red-50 p-3 rounded-xl border border-red-200">
+                    Kullanıcı adı veya şifre hatalı!
+                </div>
+                <button type="submit" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all text-sm">
+                    Giriş Yap
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ÜST BAR (Giriş Yapılınca Görünür) -->
+    <header class="bg-[#3E2723] text-white py-6 shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-bold text-amber-500">ALESTA PASTA & CAFE</h1>
+                <p class="text-xs text-gray-300">Pratik Fiyat Güncelleme ve Menü Yönetim Paneli</p>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="downloadJSON()" class="bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow transition-all flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Fiyatları Kaydet (products.json İndir)
+                </button>
+                <button onclick="handleLogout()" class="bg-red-500/20 hover:bg-red-500/30 text-red-200 px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors border border-red-500/30">
+                    Çıkış Yap
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ANA İÇERİK -->
+    <main class="container mx-auto px-4 pt-8">
+        
+        <!-- Bilgilendirme Kartı -->
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-8 shadow-sm">
+            <h3 class="text-amber-900 font-bold text-lg mb-2 flex items-center gap-2">
+                💡 Müşteri İçin Kolay Kullanım Talimatı:
+            </h3>
+            <ol class="list-decimal list-inside text-sm text-amber-800 space-y-1.5 font-medium">
+                <li>Aşağıdaki listeden istediğiniz ürünün fiyat kutucuğundaki rakamı değiştirin.</li>
+                <li>Değişiklikleri tamamladıktan sonra sağ üstteki <strong>"Fiyatları Kaydet (products.json İndir)"</strong> butonuna basın.</li>
+                <li>İnen <code>products.json</code> dosyasını sitenizin klasöründeki eski dosyanın üzerine kaydedin. Fiyatlar anında güncellenmiş olur!</li>
+            </ol>
+        </div>
+
+        <!-- Arama ve Filtreleme -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm mb-6 flex flex-col md:flex-row gap-4 justify-between items-center">
+            <input type="text" id="searchInput" oninput="filterAdminProducts()" placeholder="Ürün ismi ile ara..." 
+                class="w-full md:w-96 px-4 py-2.5 border rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm">
+            
+            <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-500 font-semibold" id="totalCount">Toplam: 0 Ürün</span>
+                <select id="categoryFilter" onchange="filterAdminProducts()" class="px-4 py-2.5 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-500">
+                    <option value="all">Tüm Kategoriler</option>
+                    <option value="kahvalti">🍳 Kahvaltılıklar & Sıcak Lezzetler</option>
+                    <option value="tost">🥪 Tostlar & Sandviçler</option>
+                    <option value="borek">🥐 Börekler & Fırın</option>
+                    <option value="pogaca">🥖 Poğaça, Açma & Simit</option>
+                    <option value="tatli">🍰 Tatlılar & Baklavalar</option>
+                    <option value="kuru">☕ Kuru Pasta & İçecekler</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tablo -->
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-200">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50 border-b border-gray-200 text-xs text-gray-500 uppercase tracking-wider">
+                            <th class="py-4 px-6">Görsel</th>
+                            <th class="py-4 px-6">Ürün İsmi</th>
+                            <th class="py-4 px-6">Kategori</th>
+                            <th class="py-4 px-6">Açıklama</th>
+                            <th class="py-4 px-6 text-right">Güncel Fiyat (₺)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminProductTable" class="divide-y divide-gray-100 text-sm">
+                        <!-- JS Dolduracak -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        let adminProducts = [];
+
+        // AUTHENTICATION LOGIC (alespastan / 192334)
+        function checkAuth() {
+            if (sessionStorage.getItem('alesta_admin_auth') === 'true') {
+                document.getElementById('loginModal').classList.add('hidden');
+                loadProducts();
+            } else {
+                document.getElementById('loginModal').classList.remove('hidden');
+            }
+        }
+
+        function handleLogin(e) {
+            e.preventDefault();
+            const user = document.getElementById('loginUsername').value.trim();
+            const pass = document.getElementById('loginPassword').value.trim();
+
+            if (user === 'alespastan' && pass === '192334') {
+                sessionStorage.setItem('alesta_admin_auth', 'true');
+                document.getElementById('loginError').classList.add('hidden');
+                document.getElementById('loginModal').classList.add('hidden');
+                loadProducts();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function handleLogout() {
+            sessionStorage.removeItem('alesta_admin_auth');
+            location.reload();
+        }
+
+        async function loadProducts() {
+            try {
+                const res = await fetch('products.json');
+                adminProducts = await res.json();
+            } catch(e) {
+                console.error("products.json okunamadı:", e);
+            }
+            renderAdminTable(adminProducts);
+        }
+
+        function renderAdminTable(data) {
+            const tbody = document.getElementById('adminProductTable');
+            document.getElementById('totalCount').textContent = `Toplam: ${data.length} Ürün`;
+            tbody.innerHTML = '';
+
+            const catMap = {
+                kahvalti: '🍳 Kahvaltı', tost: '🥪 Tost & Sandviç', 
+                borek: '🥐 Börek & Fırın', pogaca: '🥖 Poğaça & Simit', 
+                tatli: '🍰 Tatlı & Pasta', kuru: '☕ İçecek & Kuru Pasta'
+            };
+
+            data.forEach((item, index) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-amber-50/50 transition-colors";
+                tr.setAttribute('data-name', item.name.toLowerCase());
+                tr.setAttribute('data-category', item.category);
+
+                tr.innerHTML = `
+                    <td class="py-3 px-6">
+                        <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded-xl border" onerror="this.src='images/kahvaltı tabağı.png'">
+                    </td>
+                    <td class="py-3 px-6 font-bold text-gray-900">${item.name}</td>
+                    <td class="py-3 px-6">
+                        <span class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded-full font-semibold">
+                            ${catMap[item.category] || item.category}
+                        </span>
+                    </td>
+                    <td class="py-3 px-6 text-gray-500 text-xs max-w-xs truncate">${item.desc}</td>
+                    <td class="py-3 px-6 text-right">
+                        <div class="inline-flex items-center gap-1.5 bg-gray-50 border rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-amber-500">
+                            <input type="text" value="${item.price}" 
+                                onchange="updatePrice(${index}, this.value)" 
+                                class="w-20 text-right bg-transparent font-bold text-amber-600 focus:outline-none">
+                            <span class="font-bold text-gray-400">₺</span>
+                        </div>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function updatePrice(index, newPrice) {
+            adminProducts[index].price = newPrice.trim();
+        }
+
+        function filterAdminProducts() {
+            const search = document.getElementById('searchInput').value.toLowerCase().trim();
+            const category = document.getElementById('categoryFilter').value;
+            const rows = document.querySelectorAll('#adminProductTable tr');
+
+            rows.forEach(row => {
+                const name = row.getAttribute('data-name');
+                const cat = row.getAttribute('data-category');
+
+                const matchSearch = name.includes(search);
+                const matchCat = (category === 'all' || category === cat);
+
+                if (matchSearch && matchCat) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        function downloadJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(adminProducts, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "products.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+
+        checkAuth();
+    </script>
+</body>
+</html>
