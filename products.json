@@ -1,0 +1,619 @@
+[
+  {
+    "name": "Kahvaltı Tabağı",
+    "desc": "Zengin kahvaltılık çeşitleri ile",
+    "price": "250",
+    "category": "kahvalti",
+    "tag": "Zengin Serpme",
+    "image": "images/kahvaltı tabağı.png"
+  },
+  {
+    "name": "Seçme Kahvaltı",
+    "desc": "Özenle seçilmiş kahvaltılık gurme lezzetler",
+    "price": "250",
+    "category": "kahvalti",
+    "image": "images/Seçme Kahvaltı.png"
+  },
+  {
+    "name": "Hızlı Kahvaltı Tabağı",
+    "desc": "Beyaz Peynir, Zeytin, Domates, Salatalık",
+    "price": "175",
+    "category": "kahvalti",
+    "image": "images/Hızlı Kahvaltı(Beyaz Peynir, Zeytin, Domates, Salatalık).png"
+  },
+  {
+    "name": "Sucuklu Yumurta",
+    "desc": "Tereyağında kızarmış kasap sucuklu sahanda yumurta",
+    "price": "200",
+    "category": "kahvalti",
+    "image": "images/sucuklu yumurta.png"
+  },
+  {
+    "name": "Sahanda Yumurta",
+    "desc": "Tereyağında taze pişmiş sahanda yumurta",
+    "price": "120",
+    "category": "kahvalti",
+    "image": "images/sahanda yumurta.png"
+  },
+  {
+    "name": "Omlet Çeşitleri",
+    "desc": "Sıcak tavasında kaşarlı, peynirli veya karışık omlet",
+    "price": "175-200",
+    "category": "kahvalti",
+    "image": "images/omlet.png"
+  },
+  {
+    "name": "Menemen Çeşitleri",
+    "desc": "Sade, kaşarlı veya sucuklu kaşarlı sıcak menemen",
+    "price": "175-220",
+    "category": "kahvalti",
+    "image": "images/menemen.png"
+  },
+  {
+    "name": "Kızartma Tabağı (Sosis ve Patates)",
+    "desc": "Çıtır patates kızartması ve sosis tabağı",
+    "price": "200",
+    "category": "kahvalti",
+    "image": "images/Kızartma Tabağı Sosis ve Patates.png"
+  },
+  {
+    "name": "Patates Kızartması",
+    "desc": "Çıtır ev tipi baharatlı patates kızartması",
+    "price": "110",
+    "category": "kahvalti",
+    "image": "images/Patates Kızartması.png"
+  },
+  {
+    "name": "Tost Çeşitleri",
+    "desc": "Kaşarlı, peynirli, karışık veya kavurmalı kaşarlı tost",
+    "price": "150-240",
+    "category": "tost",
+    "image": "images/tost çeşitleri.png"
+  },
+  {
+    "name": "Ayvalık Tostu",
+    "desc": "Özel Ayvalık ekmeğinde bol malzemeli ve turşulu tost",
+    "price": "240",
+    "category": "tost",
+    "tag": "Doyurucu",
+    "image": "images/ayvalık tost.png"
+  },
+  {
+    "name": "Saçaklı Mini Sandviç",
+    "desc": "Rendelenmiş peynirli saçaklı mini kokteyl sandviç",
+    "price": "30",
+    "category": "tost",
+    "image": "images/Saçaklı Mini Sandviç.png"
+  },
+  {
+    "name": "Acukalı Mini Sandviç",
+    "desc": "Özel acuka ezmeli ve peynirli atıştırmalık mini sandviç",
+    "price": "30",
+    "category": "tost",
+    "image": "images/Acukalı Mini Sandviç.png"
+  },
+  {
+    "name": "Su Böreği (Porsiyon)",
+    "desc": "Meşhur kat kat el açması peynirli Tuzla su böreği",
+    "price": "150",
+    "category": "borek",
+    "tag": "Meşhur Spesiyal",
+    "image": "images/Su Böreği Porsiyon.png"
+  },
+  {
+    "name": "Adana Böreği (Porsiyon)",
+    "desc": "Uzayan bol böreklik peyniriyle fırından sıcak Adana böreği",
+    "price": "150",
+    "category": "borek",
+    "image": "images/Adana Böreği Porsiyon.png"
+  },
+  {
+    "name": "Kıymalı Kol Böreği (Porsiyon)",
+    "desc": "Çıtır yufkasında özel dana kıymalı kol böreği porsiyonu",
+    "price": "150",
+    "category": "borek",
+    "image": "images/Kıymalı Kol Böreği Porsiyon.png"
+  },
+  {
+    "name": "Peynirli Kol Böreği (Porsiyon)",
+    "desc": "Çıtır yufkada leziz peynir dolgulu kol böreği",
+    "price": "150",
+    "category": "borek",
+    "image": "images/Peynirli Kol Böreği Porsiyon.png"
+  },
+  {
+    "name": "Köy Böreği Çeşitleri (Porsiyon)",
+    "desc": "Ispanaklı, Peynirli, Kıymalı, Patatesli, Patlıcanlı",
+    "price": "150",
+    "category": "borek",
+    "image": "images/Köy Böreği Çeşitleri Porsiyon.png"
+  },
+  {
+    "name": "Boşnak Mantısı (Porsiyon)",
+    "desc": "El açması fırınlanmış kıymalı çıtır Boşnak mantısı böreği",
+    "price": "185",
+    "category": "borek",
+    "image": "images/Boşnak Mantısı Porsiyon.png"
+  },
+  {
+    "name": "Tepsi Pizza (Dilim)",
+    "desc": "Bol malzemeli ev tipi fırın tepsi pizza dilimi",
+    "price": "85",
+    "category": "borek",
+    "image": "images/Tepsi Pizza Dilim.png"
+  },
+  {
+    "name": "Mini Pizza",
+    "desc": "Atıştırmalık zeytinli, mısırlı ve sosisli mini pizza",
+    "price": "25",
+    "category": "borek",
+    "image": "images/Mini Pizza.png"
+  },
+  {
+    "name": "Poğaça - Sade",
+    "desc": "Taze fırından pürüzsüz kıvamda sade poğaça",
+    "price": "25",
+    "category": "pogaca",
+    "image": "images/Sade Poğaça.png"
+  },
+  {
+    "name": "Poğaça - Kaşarlı",
+    "desc": "İçi erimiş kaşar peynirli taze fırın poğaçası",
+    "price": "25",
+    "category": "pogaca",
+    "image": "images/Kaşarlı Poğaça.png"
+  },
+  {
+    "name": "Poğaça - Peynirli",
+    "desc": "Geleneksel lor ve beyaz peynir harçlı poğaça",
+    "price": "25",
+    "category": "pogaca",
+    "image": "images/Peynirli Poğaça.png"
+  },
+  {
+    "name": "Poğaça Çeşitleri (Kıymalı, Zeytinli, Patatesli)",
+    "desc": "Kıymalı, zeytinli veya patatesli fırın poğaçası çeşitleri",
+    "price": "25",
+    "category": "pogaca",
+    "image": "images/Poğaça Çeşitleri.png"
+  },
+  {
+    "name": "Açma - Sade",
+    "desc": "Yumuşacık tel tel ayrılan sade fırın açması",
+    "price": "25",
+    "category": "pogaca",
+    "image": "images/Sade Açma.png"
+  },
+  {
+    "name": "Açma Çeşitleri (Çikolatalı, Peynirli, Patatesli)",
+    "desc": "Çikolatalı, peynirli, zeytinli veya patatesli zengin açmalar",
+    "price": "30",
+    "category": "pogaca",
+    "image": "images/Patatesli Açma.png"
+  },
+  {
+    "name": "Simit - Klasik",
+    "desc": "Geleneksel bol susamlı fırın simidi",
+    "price": "25",
+    "category": "pogaca",
+    "image": "images/Simit.png"
+  },
+  {
+    "name": "Simit - Çekirdekli",
+    "desc": "Bol ayçekirdekli çıtır fırın simidi",
+    "price": "25",
+    "category": "pogaca",
+    "image": "images/Çekirdekli Simit.png"
+  },
+  {
+    "name": "Tereyağlı Simit",
+    "desc": "Rize tereyağı aromalı sıcak fırın simidi",
+    "price": "30",
+    "category": "pogaca",
+    "image": "images/Tereyağlı Simit.png"
+  },
+  {
+    "name": "Kaşarlı Simit",
+    "desc": "İçi erimiş kaşar peynir dolgulu sıcak simit",
+    "price": "60",
+    "category": "pogaca",
+    "image": "images/Kaşarlı Simit.png"
+  },
+  {
+    "name": "Kaşarlı & Sucuklu Simit",
+    "desc": "Kasap sucuk ve kaşar peynirli zengin simit sandviç",
+    "price": "60",
+    "category": "pogaca",
+    "image": "images/Kaşarlı & Sucuklu Simit.png"
+  },
+  {
+    "name": "Simit Sandviç (Açık Kaşarlı)",
+    "desc": "Üzeri eritilmiş bol kaşar peynirli dolu simit sandviç",
+    "price": "90",
+    "category": "pogaca",
+    "image": "images/Simit Sandviç.png"
+  },
+  {
+    "name": "Profiterol",
+    "desc": "Gerçek Belçika çikolatalı kremalı profiterol topları",
+    "price": "250",
+    "category": "tatli",
+    "tag": "Çikolata Aşkı",
+    "image": "images/Profiterol.png"
+  },
+  {
+    "name": "Supangle",
+    "desc": "Yoğun Belçika çikolatalı geleneksel supangle",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Supangle.png"
+  },
+  {
+    "name": "Fırın Sütlaç",
+    "desc": "Toprak kasede nar gibi kızarmış geleneksel fırın sütlaç",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Fırın Sütlaç.png"
+  },
+  {
+    "name": "Kazandibi",
+    "desc": "Karamelize alt tabanı ve ipeksi kıvamıyla nefis kazandibi",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Kazandibi.png"
+  },
+  {
+    "name": "Tavuk Göğsü",
+    "desc": "Geleneksel sütlü tavuk göğsü tatlısı",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Tavuk Göğsü.png"
+  },
+  {
+    "name": "Trileçe - Karamelli",
+    "desc": "Karamel soslu pamuk gibi sütlü trileçe",
+    "price": "200",
+    "category": "tatli",
+    "tag": "Popüler",
+    "image": "images/Karamelli Trileçe.png"
+  },
+  {
+    "name": "Trileçe - Frambuazlı",
+    "desc": "Ekşimsi frambuaz soslu sütlü trileçe",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Frambuazlı Trileçe.png"
+  },
+  {
+    "name": "Magnolia (Çilekli & Muzlu)",
+    "desc": "Taze çilek veya muzlu bisküvili ipeksi krema tatlısı",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Magnolia Çilekli Muzlu.png"
+  },
+  {
+    "name": "Malaga",
+    "desc": "Bütün muzlu, çikolata kaplamalı ve fıstıklı spesiyal yaş pasta",
+    "price": "250",
+    "category": "tatli",
+    "tag": "Spesiyal Malaga",
+    "image": "images/Malaga.png"
+  },
+  {
+    "name": "İbiza",
+    "desc": "Rulo bisküvi tabanlı muzlu ve çikolatalı İbiza tatlısı",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/İbiza.png"
+  },
+  {
+    "name": "Ekler Çeşitleri",
+    "desc": "Fransız usulü çikolatalı ve aromalı taze ekler",
+    "price": "175-200",
+    "category": "tatli",
+    "image": "images/Ekler.png"
+  },
+  {
+    "name": "Tartolet (4 Adet)",
+    "desc": "Meyveli, çıtır hamurlu nefis mini tartoletler (4 adet)",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Tartolet.png"
+  },
+  {
+    "name": "Mini Cheesecake (4 Adet)",
+    "desc": "Porsiyonluk yoğun peynir tatlısı mini cheesecake (4 adet)",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Mini Cheesecake.png"
+  },
+  {
+    "name": "Mini Rulo Pasta - Muzlu (4 Adet)",
+    "desc": "Yumuşacık muzlu ve özel krema dolgulu rulo pasta (4 adet)",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Muzlu Mini Rulo Pasta.png"
+  },
+  {
+    "name": "Mini Rulo Pasta - Çilekli (4 Adet)",
+    "desc": "Taze çilek ve krema dolgulu mini rulo pasta (4 adet)",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Çilekli Mini Rulo Pasta.png"
+  },
+  {
+    "name": "Soğuk Baklava (4 Dilim)",
+    "desc": "Sütlü ve çikolatalı taze soğuk baklava (4 dilim)",
+    "price": "250",
+    "category": "tatli",
+    "tag": "Soğuk Baklava",
+    "image": "images/Soğuk Baklava.png"
+  },
+  {
+    "name": "Cevizli Baklava (Porsiyon)",
+    "desc": "Bol cevizli ev usulü taze şerbetli baklava porsiyonu",
+    "price": "200",
+    "category": "tatli",
+    "image": "images/Cevizli Baklava.png"
+  },
+  {
+    "name": "Fıstıklı Baklava (Porsiyon)",
+    "desc": "Gaziantep fıstıklı ve cevizi bol taze şerbetli baklava",
+    "price": "250",
+    "category": "tatli",
+    "tag": "Antep Fıstıklı",
+    "image": "images/Fıstıklı Baklava.png"
+  },
+  {
+    "name": "Tek Pasta - Badem & Çilek",
+    "desc": "Taze çilek ve kıtır bademli özel yaş pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Badem & Çilek Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Frambuazlı",
+    "desc": "Frambuaz soslu ve kremalı porsiyon pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Frambuazlı Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Ganaj Çikolatalı",
+    "desc": "Yoğun ganaj çikolata kaplamalı tek pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Ganaj Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Kestane & Frambuaz",
+    "desc": "Kestane püreli ve frambuazlı gurme pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Kestane & Frambuaz Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Krokanlı",
+    "desc": "Karamel ve çıtır krokanlı özel tek pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Krokanlı Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Lotus & Çilek",
+    "desc": "Lotus bisküvi ezmesi ve taze çilekli yaş pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Lotus & Çilek Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Karışık Meyveli",
+    "desc": "Mevsim meyveli taze porsiyon pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Meyveli Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Orman Meyveli",
+    "desc": "Böğürtlen ve ahududulu orman meyveli pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Orman Meyveli Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Profiterollü",
+    "desc": "Üzeri mini profiterol topları ile kaplı yaş pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Profiterollü Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Tiramisu",
+    "desc": "İtalyan usulü kahveli ve mascarpioneli Tiramisu",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Tiramisu Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Çikolatalı",
+    "desc": "Bol kakao ve çikolata dolgulu klasik tek pasta",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Çikolatalı Tek Pasta.png"
+  },
+  {
+    "name": "Tek Pasta - Çilek & Çikolata",
+    "desc": "Taze çilek ve bitter çikolata uyumu",
+    "price": "250",
+    "category": "tatli",
+    "image": "images/Çilek & Çikolata Tek Pasta.png"
+  },
+  {
+    "name": "Kuru Pasta (Tatlı, Tuzlu)",
+    "desc": "Tatlı/Tuzlu karışık taze fırın kuru pastası (kg opsiyonlu)",
+    "price": "150",
+    "category": "kuru",
+    "image": "images/Kuru Pasta Tatlı-Tuzlu.png"
+  },
+  {
+    "name": "Kurabiye - Elmalı Tarçınlı",
+    "desc": "Taze elma harçlı ve tarçınlı ev tipi kurabiye",
+    "price": "75",
+    "category": "kuru",
+    "image": "images/Elmalı Kurabiye.png"
+  },
+  {
+    "name": "Kurabiye - Üzümlü Kesme",
+    "desc": "Üzümlü ve fındıklı kesme ev kurabiyesi",
+    "price": "75",
+    "category": "kuru",
+    "image": "images/Üzümlü Kesme Kurabiye.png"
+  },
+  {
+    "name": "Ay Çöreği",
+    "desc": "Bol kakao, fındık ve ceviz dolgulu taze fırın ay çöreği",
+    "price": "75",
+    "category": "kuru",
+    "image": "images/Ay Çöreği.png"
+  },
+  {
+    "name": "Çay",
+    "desc": "Taze demlenmiş Rize çayı",
+    "price": "30",
+    "category": "kuru",
+    "image": "images/Çay.png"
+  },
+  {
+    "name": "Türk Kahvesi",
+    "desc": "Köpüklü geleneksel Türk kahvesi",
+    "price": "100",
+    "category": "kuru",
+    "image": "images/Türk Kahvesi.png"
+  },
+  {
+    "name": "Nescafe (Sade / Sütlü)",
+    "desc": "Sıcak sade veya sütlü Nescafe",
+    "price": "100",
+    "category": "kuru",
+    "image": "images/Nescafe Sade - Sütlü.png"
+  },
+  {
+    "name": "Cappucino",
+    "desc": "İpeksi köpüklü sıcak Cappuccino",
+    "price": "100",
+    "category": "kuru",
+    "image": "images/Cappucino.png"
+  },
+  {
+    "name": "Latte",
+    "desc": "Espresso ve sıcak süt köpüklü Latte",
+    "price": "100",
+    "category": "kuru",
+    "image": "images/Latte.png"
+  },
+  {
+    "name": "Sıcak Çikolata",
+    "desc": "Yoğun kıvamlı sıcak çikolata",
+    "price": "100",
+    "category": "kuru",
+    "image": "images/Sıcak Çikolata.png"
+  },
+  {
+    "name": "Obsesso Soğuk Kahve Çeşitleri",
+    "desc": "Obsesso Latte, Mocha, Black soğuk kahve çeşitleri",
+    "price": "75",
+    "category": "kuru",
+    "image": "images/Obsesso Soğuk Kahve Çeşitleri.png"
+  },
+  {
+    "name": "Kutu Coca Cola",
+    "desc": "Buz gibi 330 ml Kutu Coca Cola",
+    "price": "60",
+    "category": "kuru",
+    "image": "images/Kutu Cola.png"
+  },
+  {
+    "name": "Kutu Fanta",
+    "desc": "Buz gibi 330 ml Kutu Fanta",
+    "price": "60",
+    "category": "kuru",
+    "image": "images/Kutu Fanta.png"
+  },
+  {
+    "name": "Kutu Sprite",
+    "desc": "Buz gibi 330 ml Kutu Sprite",
+    "price": "60",
+    "category": "kuru",
+    "image": "images/Kutu Sprite.png"
+  },
+  {
+    "name": "Kutu Ayran",
+    "desc": "Taze ferahlatıcı yayık ayranı",
+    "price": "35",
+    "category": "kuru",
+    "image": "images/Kutu Ayran.png"
+  },
+  {
+    "name": "Kutu Cappy Çeşitleri",
+    "desc": "Şeftali, vişne, karışık Cappy meyve suyu çeşitleri",
+    "price": "60",
+    "category": "kuru",
+    "image": "images/Kutu Cappy Çeşitleri.png"
+  },
+  {
+    "name": "Kutu Ice Tea Çeşitleri",
+    "desc": "Soğuk şeftali veya limon aromalı Ice Tea çeşitleri",
+    "price": "60",
+    "category": "kuru",
+    "image": "images/Kutu Ice Tea Çeşitleri.png"
+  },
+  {
+    "name": "Cam Şişe Meyve Suyu",
+    "desc": "Cam şişede lezzetli taze meyve suyu",
+    "price": "65",
+    "category": "kuru",
+    "image": "images/Cam Şişe Meyve Suyu.png"
+  },
+  {
+    "name": "Meyve Suyu 200 ml",
+    "desc": "Küçük kutu meyve suyu",
+    "price": "30",
+    "category": "kuru",
+    "image": "images/Meyve Suyu 200 ml.png"
+  },
+  {
+    "name": "Ev Yapımı Limonata",
+    "desc": "Taze nane yapraklı ev yapımı soğuk limonata",
+    "price": "75",
+    "category": "kuru",
+    "image": "images/Ev Yapımı Limonata.png"
+  },
+  {
+    "name": "Uludağ Limonata 330 ml",
+    "desc": "Soğuk Uludağ limonata",
+    "price": "60",
+    "category": "kuru",
+    "image": "images/Uludağ Limonata 330 ml.png"
+  },
+  {
+    "name": "Meyveli Maden Suyu",
+    "desc": "Limonlu, elmalı veya çilekli maden suyu",
+    "price": "35",
+    "category": "kuru",
+    "image": "images/Meyveli Maden Suyu.png"
+  },
+  {
+    "name": "Sade Maden Suyu",
+    "desc": "Doğal zengin mineralli sade soda",
+    "price": "25",
+    "category": "kuru",
+    "image": "images/Sade Maden Suyu.png"
+  },
+  {
+    "name": "Su (500 ml)",
+    "desc": "Soğuk doğal kaynak suyu",
+    "price": "15",
+    "category": "kuru",
+    "image": "images/Su.png"
+  }
+]
