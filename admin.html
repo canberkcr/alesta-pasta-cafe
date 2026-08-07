@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alesta Pasta & Cafe | Otomatik Fiyat Yönetim Paneli</title>
+    <title>Alesta Pasta & Cafe | Otomatik Fiyat & Ürün Yönetim Paneli</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -19,7 +19,7 @@
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 002-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
             </div>
             <h2 class="text-2xl font-bold text-gray-900 mb-1">Yönetici Girişi</h2>
-            <p class="text-sm text-gray-500 mb-6">Alesta Pasta & Cafe Fiyat Yönetimi</p>
+            <p class="text-sm text-gray-500 mb-6">Alesta Pasta & Cafe Fiyat & Ürün Yönetimi</p>
             
             <form onsubmit="handleLogin(event)" class="space-y-4 text-left">
                 <div>
@@ -42,17 +42,84 @@
         </div>
     </div>
 
+    <!-- YENİ ÜRÜN EKLEME MODALI -->
+    <div id="addProductModal" class="hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 max-w-lg w-full border border-gray-100 relative">
+            <button onclick="toggleAddModal(false)" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center font-bold">✕</button>
+            
+            <h3 class="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
+                <span class="text-amber-600">➕</span> Menüye Yeni Ürün Ekle
+            </h3>
+            <p class="text-xs text-gray-500 mb-6">Ürün bilgilerini doldurup ekleyin, ardından canlıya aktarın.</p>
+            
+            <form onsubmit="handleAddNewProduct(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Ürün İsmi <span class="text-red-500">*</span></label>
+                    <input type="text" id="newProductName" required placeholder="Örn: Fıstıklı Sarma Baklava" 
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Kategori <span class="text-red-500">*</span></label>
+                        <select id="newProductCategory" required class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                            <option value="kahvalti">🍳 Kahvaltılıklar</option>
+                            <option value="tost">🥪 Tost & Sandviç</option>
+                            <option value="borek">🥐 Börek & Fırın</option>
+                            <option value="pogaca">🥖 Poğaça & Simit</option>
+                            <option value="tatli">🍰 Tatlı & Pasta</option>
+                            <option value="kuru">🥮 Kuru Pasta</option>
+                            <option value="icecek">☕ İçecekler</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Fiyat (₺) <span class="text-red-500">*</span></label>
+                        <input type="text" id="newProductPrice" required placeholder="Örn: 250" 
+                            class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Fotoğraf URL / Dosya Yolu</label>
+                    <input type="text" id="newProductImage" placeholder="Örn: images/fistikli-baklava.png veya https://..." 
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                    <span class="text-[11px] text-gray-400 mt-1 block">Boş bırakılırsa varsayılan görsel atanır. İnternetten resim URL'si de ekleyebilirsiniz.</span>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Açıklama</label>
+                    <input type="text" id="newProductDesc" placeholder="Örn: Antep fıstıklı ve şerbetli çıtır ev baklavası" 
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Özel Etiket (İsteğe Bağlı)</label>
+                    <input type="text" id="newProductTag" placeholder="Örn: Spesiyal / Yeni / Popüler" 
+                        class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:outline-none text-sm">
+                </div>
+
+                <div class="flex justify-end gap-3 pt-4">
+                    <button type="button" onclick="toggleAddModal(false)" class="px-5 py-2.5 rounded-xl border text-gray-600 hover:bg-gray-50 text-sm font-semibold">İptal</button>
+                    <button type="submit" class="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold shadow-md transition-all">➕ Ürünü Menüye Ekle</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- ÜST BAR (Giriş Yapılınca Görünür) -->
     <header class="bg-[#3E2723] text-white py-6 shadow-md sticky top-0 z-40">
         <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
                 <h1 class="text-2xl font-bold text-amber-500">ALESTA PASTA & CAFE</h1>
-                <p class="text-xs text-gray-300">Canlı Fiyat ve Menü Yönetim Paneli (cPanel / PHP Uyumlu)</p>
+                <p class="text-xs text-gray-300">Canlı Fiyat ve Ürün Yönetim Paneli</p>
             </div>
-            <div class="flex gap-3">
+            <div class="flex flex-wrap gap-3">
+                <button onclick="toggleAddModal(true)" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow transition-all flex items-center gap-1.5">
+                    <span>➕ Yeni Ürün Ekle</span>
+                </button>
                 <button id="saveBtn" onclick="saveToLive()" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg transition-all flex items-center gap-2 transform active:scale-95">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
-                    <span>⚡ Fiyatları Canlıda Güncelle & Kaydet</span>
+                    <span>⚡ Canlıda Güncelle & Kaydet</span>
                 </button>
                 <button onclick="handleLogout()" class="bg-red-500/20 hover:bg-red-500/30 text-red-200 px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors border border-red-500/30">
                     Çıkış Yap
@@ -74,10 +141,10 @@
         <!-- Bilgilendirme Kartı -->
         <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-6 shadow-sm">
             <h3 class="text-amber-900 font-bold text-base mb-1.5 flex items-center gap-2">
-                ⚡ cPanel / PHP Sunucu Otomatik Güncelleme Mimarisi:
+                ⚡ Canlı Fiyat & Ürün Yönetimi:
             </h3>
             <p class="text-sm text-amber-800 font-medium leading-relaxed">
-                Fiyatlarda değişiklik yaptıktan sonra sağ üstteki <strong>"⚡ Fiyatları Canlıda Güncelle & Kaydet"</strong> butonuna basmanız yeterlidir. Sitemiz cPanel sunucunuzdaki <code>api/save-prices.php</code> servisine bağlanarak fiyatları <strong>hiçbir FTP yüklemesi yapmadan anında canlıya alır!</strong>
+                İstediğiniz ürünün fiyatını değiştirebilir, sağ üstteki <strong>"➕ Yeni Ürün Ekle"</strong> butonuyla menüye yeni ürün ekleyebilirsiniz. Değişiklikleri tamamladıktan sonra <strong>"⚡ Canlıda Güncelle & Kaydet"</strong> butonuna basmanız yeterlidir!
             </p>
         </div>
 
@@ -112,6 +179,7 @@
                             <th class="py-4 px-6">Kategori</th>
                             <th class="py-4 px-6">Açıklama</th>
                             <th class="py-4 px-6 text-right">Güncel Fiyat (₺)</th>
+                            <th class="py-4 px-6 text-center">İşlem</th>
                         </tr>
                     </thead>
                     <tbody id="adminProductTable" class="divide-y divide-gray-100 text-sm">
@@ -158,6 +226,15 @@
             location.reload();
         }
 
+        function toggleAddModal(show) {
+            const modal = document.getElementById('addProductModal');
+            if (show) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
         async function loadProducts() {
             try {
                 const res = await fetch('products.json?v=' + Date.now());
@@ -188,15 +265,18 @@
 
                 tr.innerHTML = `
                     <td class="py-3 px-6">
-                        <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded-xl border" onerror="this.src='images/kahvaltı tabağı.png'">
+                        <img src="${item.image}" alt="${item.name}" class="w-12 h-12 object-cover rounded-xl border bg-gray-50" onerror="this.src='images/kahvaltı tabağı.png'">
                     </td>
-                    <td class="py-3 px-6 font-bold text-gray-900">${item.name}</td>
+                    <td class="py-3 px-6 font-bold text-gray-900">
+                        ${item.name}
+                        ${item.tag ? `<span class="ml-2 text-[10px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-md font-semibold">${item.tag}</span>` : ''}
+                    </td>
                     <td class="py-3 px-6">
                         <span class="bg-gray-100 text-gray-700 text-xs px-2.5 py-1 rounded-full font-semibold">
                             ${catMap[item.category] || item.category}
                         </span>
                     </td>
-                    <td class="py-3 px-6 text-gray-500 text-xs max-w-xs truncate">${item.desc}</td>
+                    <td class="py-3 px-6 text-gray-500 text-xs max-w-xs truncate">${item.desc || '-'}</td>
                     <td class="py-3 px-6 text-right">
                         <div class="inline-flex items-center gap-1.5 bg-gray-50 border rounded-xl px-3 py-1.5 focus-within:ring-2 focus-within:ring-amber-500">
                             <input type="text" value="${item.price}" 
@@ -205,6 +285,11 @@
                             <span class="font-bold text-gray-400">₺</span>
                         </div>
                     </td>
+                    <td class="py-3 px-6 text-center">
+                        <button onclick="deleteProduct(${index})" class="text-red-500 hover:text-red-700 p-1.5 rounded-lg hover:bg-red-50 transition-colors" title="Ürünü Sil">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        </button>
+                    </td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -212,6 +297,43 @@
 
         function updatePrice(index, newPrice) {
             adminProducts[index].price = newPrice.trim();
+        }
+
+        function deleteProduct(index) {
+            const item = adminProducts[index];
+            if (confirm(`"${item.name}" ürününü menüden silmek istediğinize emin misiniz?`)) {
+                adminProducts.splice(index, 1);
+                renderAdminTable(adminProducts);
+                showStatus(`"${item.name}" listeden çıkarıldı. Değişiklikleri canlıya almak için 'Canlıda Güncelle & Kaydet' butonuna basınız.`, 'info');
+            }
+        }
+
+        function handleAddNewProduct(e) {
+            e.preventDefault();
+            const name = document.getElementById('newProductName').value.trim();
+            const category = document.getElementById('newProductCategory').value;
+            const price = document.getElementById('newProductPrice').value.trim();
+            const imageInput = document.getElementById('newProductImage').value.trim();
+            const desc = document.getElementById('newProductDesc').value.trim();
+            const tag = document.getElementById('newProductTag').value.trim();
+
+            const image = imageInput ? imageInput : 'images/kahvaltı tabağı.png';
+
+            const newObj = { name, desc, price, category, image };
+            if (tag) newObj.tag = tag;
+
+            adminProducts.unshift(newObj);
+            renderAdminTable(adminProducts);
+            toggleAddModal(false);
+
+            // Formu Temizle
+            document.getElementById('newProductName').value = '';
+            document.getElementById('newProductPrice').value = '';
+            document.getElementById('newProductImage').value = '';
+            document.getElementById('newProductDesc').value = '';
+            document.getElementById('newProductTag').value = '';
+
+            showStatus(`🎉 "${name}" ürünü başarıyla eklendi! Canlı menüde görünmesi için lütfen '⚡ Canlıda Güncelle & Kaydet' butonuna basınız.`, 'success');
         }
 
         function filterAdminProducts() {
@@ -255,7 +377,7 @@
             const btn = document.getElementById('saveBtn');
             btn.disabled = true;
             btn.innerHTML = `<span>🔄 Sunucuya Kaydediliyor...</span>`;
-            showStatus("🔄 Yeni fiyatlar cPanel sunucusuna aktarılıyor, lütfen bekleyin...", "info");
+            showStatus("🔄 Yeni ürünler ve fiyatlar sunucuya aktarılıyor, lütfen bekleyin...", "info");
 
             // 1. Önce cPanel PHP API'ye İstek At (api/save-prices.php)
             try {
@@ -268,9 +390,9 @@
                 if (phpRes.ok) {
                     const phpData = await phpRes.json();
                     if (phpData.success) {
-                        showStatus("🎉 FİYATLAR cPANEL SUNUCUSUNDA BAŞARIYLA GÜNCELLENDİ! Sitedeki tüm müşteriler yeni fiyatları canlı olarak görmeye başladı.", "success");
+                        showStatus("🎉 TÜM ÜRÜNLER VE FİYATLAR cPANEL SUNUCUSUNDA BAŞARIYLA GÜNCELLENDİ!", "success");
                         btn.disabled = false;
-                        btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><span>⚡ Fiyatları Canlıda Güncelle & Kaydet</span>`;
+                        btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><span>⚡ Canlıda Güncelle & Kaydet</span>`;
                         return;
                     }
                 }
@@ -288,7 +410,7 @@
             if (!token) {
                 showStatus("⚠️ cPanel PHP servisi bulunamadı ve GitHub Token girilmedi.", "error");
                 btn.disabled = false;
-                btn.innerHTML = `<span>⚡ Fiyatları Canlıda Güncelle & Kaydet</span>`;
+                btn.innerHTML = `<span>⚡ Canlıda Güncelle & Kaydet</span>`;
                 return;
             }
 
@@ -312,11 +434,11 @@
                 const putRes = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE}`, {
                     method: 'PUT',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: "Fiyatlar anlık güncellendi", content: base64Content, sha: sha })
+                    body: JSON.stringify({ message: "Ürünler ve fiyatlar anlık güncellendi", content: base64Content, sha: sha })
                 });
 
                 if (putRes.ok) {
-                    showStatus("🎉 FİYATLAR BAŞARIYLA GÜNCELLENDİ! (GitHub Demo Canlı)", "success");
+                    showStatus("🎉 TÜM ÜRÜNLER VE FİYATLAR BAŞARIYLA GÜNCELLENDİ! (GitHub Demo Canlı)", "success");
                 } else {
                     throw new Error("API Güncelleme Başarısız.");
                 }
@@ -324,7 +446,7 @@
                 showStatus("⚠️ Güncelleme hatası: " + e.message, "error");
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><span>⚡ Fiyatları Canlıda Güncelle & Kaydet</span>`;
+                btn.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg><span>⚡ Canlıda Güncelle & Kaydet</span>`;
             }
         }
 
